@@ -42,7 +42,7 @@
     </script>
   </head>
   <body class="m-0 p-0 pt-0 lg:mx-5 overflow-x-hidden font-poppins">
-    <div class="lg:bg-[url('{{ asset('Assets_LandingPage/./Assets/Image/bakcground.png') }}')] lg:block bg-no-repeat bg-right-top h-[640px] lg:w-[1348px] bg-fixed pt-0"
+    <div class="lg:bg-[url('{{ asset('Assets_LandingPage/Assets/Image/bakcground.png') }}')] lg:block bg-no-repeat bg-right-top h-[640px] lg:w-[1348px] bg-fixed pt-0"
    >
 
       <!-- navbar -->
@@ -50,7 +50,7 @@
         <nav class="relative px-4 py-4 flex justify-between items-center">
           <a class="flex justify-between -translate-y-1/4" href="#">
             <img
-              src="{{asset('Assets_LandingPage/Assets/Image/Logo KafeKoding.png')}}"
+              src="{{asset('Assets_LandingPage/Assets/Image/LogoKafeKoding.png')}}"
               class="h-10 mt-3"
               alt=""
             />
@@ -125,7 +125,7 @@
             <div class="flex items-center mb-8">
               <a class="mr-auto text-3xl font-bold leading-none" href="#">
                 <img
-                  src="{{asset('Assets_LandingPage/Assets/Image/Logo KafeKoding.png')}}"
+                  src="{{asset('Assets_LandingPage/Assets/Image/LogoKafeKoding.png')}}"
                   class="h-10 mt-3"
                   alt=""
                 />
@@ -320,7 +320,7 @@
     <!-- End Tentang Kami -->
     <!-- Flow KK -->
     <section>
-      <div class="bg-[url('{{ asset('Assets_LandingPage/./Assets/Image/bg-flow-kk.svg') }}')] ">
+      <div class="bg-[url('{{ asset('Assets_LandingPage/Assets/Image/bg-flow-kk.svg') }}')] ">
       <div class="mt-20 container">
         
           <div class="px-10 flex flex-wrap">
@@ -643,7 +643,7 @@
                           <span class="flex justify-center self-center"
                             ><img
                               class="w-4"
-                              src="{{asset('Assets_LandingPage/./Assets/Image/icon_kelasKafekoding_lokasi.svg')}}"
+                              src="{{asset('Assets_LandingPage/Assets/Image/icon_kelasKafekoding_lokasi.svg')}}"
                               alt=""
                             />
                             <p class="ml-2 font-normal text-[10px]">
@@ -879,7 +879,7 @@
       <hr>
       <div class="container px-6 pt-6">
         <div class="mb-6 flex justify-center">
-          <img class="" src="./Assets/Image/Logo KafeKoding.png" alt="">
+          <img class="" src="./Assets/Image/LogoKafeKoding.png" alt="">
         </div>
         <div>
           <p class="text-center text-main font-semibold text-[20px] mb-10">Kafe Koding</p>
