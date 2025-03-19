@@ -22,7 +22,7 @@ class TentangkamiController extends Controller
         $data['tentangkami'] = DB::table('tb_tentangkami')->get();
 
         // dd($data['tentangkami']);
-        return view('Pages.Halaman_Admin.kelola_tentangkami.index', $data);
+        return view('Pages.Halaman_admin.kelola_tentangkami.index', $data);
     }
 
     /**
@@ -30,7 +30,7 @@ class TentangkamiController extends Controller
      */
     public function create()
     {
-        return view('Pages.Halaman_Admin.kelola_tentangkami.create');
+        return view('Pages.Halaman_admin.kelola_tentangkami.create');
     }
 
     /**
@@ -93,7 +93,7 @@ class TentangkamiController extends Controller
     {
         $data['dataById'] = DB::table('tb_tentangkami')->where('id_tentangkami', '=', $id)->first();
 
-        return view('Pages.Halaman_Admin.kelola_tentangkami.edit', $data);
+        return view('Pages.Halaman_admin.kelola_tentangkami.edit', $data);
     }
 
     /**

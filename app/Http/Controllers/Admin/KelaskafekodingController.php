@@ -23,7 +23,7 @@ class KelaskafekodingController extends Controller
         $data['kelaskafekoding'] = DB::table('tb_kelaskafekoding')->get();
 
         // dd($data['kelaskafekoding']);
-        return view('Pages.Halaman_Admin.kelola_kelaskafekoding.index', $data);
+        return view('Pages.Halaman_admin.kelola_kelaskafekoding.index', $data);
     }
 
     /**
@@ -31,7 +31,7 @@ class KelaskafekodingController extends Controller
      */
     public function create()
     {
-        return view('Pages.Halaman_Admin.kelola_kelaskafekoding.create');
+        return view('Pages.Halaman_admin.kelola_kelaskafekoding.create');
     }
 
     /**
@@ -101,7 +101,7 @@ class KelaskafekodingController extends Controller
     {
         $data['dataById'] = DB::table('tb_kelaskafekoding')->where('id_kelaskafekoding', '=', $id)->first();
 
-        return view('Pages.Halaman_Admin.kelola_kelaskafekoding.edit', $data);
+        return view('Pages.Halaman_admin.kelola_kelaskafekoding.edit', $data);
     }
 
     /**

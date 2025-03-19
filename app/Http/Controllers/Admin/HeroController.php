@@ -24,7 +24,7 @@ class HeroController extends Controller
         $data['hero'] = DB::table('tb_hero')->get();
 
         // dd($data['hero']);
-        return view('Pages.Halaman_Admin.kelola_hero.index', $data);
+        return view('Pages.Halaman_admin.kelola_hero.index', $data);
     }
 
     /**
@@ -32,7 +32,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        return view('Pages.Halaman_Admin.kelola_hero.create');
+        return view('Pages.Halaman_admin.kelola_hero.create');
     }
 
     /**
@@ -97,7 +97,7 @@ class HeroController extends Controller
     {
         $data['dataById'] = DB::table('tb_hero')->where('id_hero', '=', $id)->first();
 
-        return view('Pages.Halaman_Admin.kelola_hero.edit', $data);
+        return view('Pages.Halaman_admin.kelola_hero.edit', $data);
     }
 
     /**

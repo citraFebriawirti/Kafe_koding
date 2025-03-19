@@ -22,7 +22,7 @@ class BlogController extends Controller
         $data['blog'] = DB::table('tb_blog')->get();
 
         // dd($data['blog']);
-        return view('Pages.Halaman_Admin.kelola_blog.index', $data);
+        return view('Pages.Halaman_admin.kelola_blog.index', $data);
     }
 
     /**
@@ -30,7 +30,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('Pages.Halaman_Admin.kelola_blog.create');
+        return view('Pages.Halaman_admin.kelola_blog.create');
     }
 
     /**
@@ -100,7 +100,7 @@ class BlogController extends Controller
     {
         $data['dataById'] = DB::table('tb_blog')->where('id_blog', '=', $id)->first();
 
-        return view('Pages.Halaman_Admin.kelola_blog.edit', $data);
+        return view('Pages.Halaman_admin.kelola_blog.edit', $data);
     }
 
     /**

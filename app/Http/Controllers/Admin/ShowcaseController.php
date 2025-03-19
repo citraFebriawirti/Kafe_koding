@@ -22,7 +22,7 @@ class ShowcaseController extends Controller
         $data['showcase'] = DB::table('tb_showcase')->get();
 
         // dd($data['showcase']);
-        return view('Pages.Halaman_Admin.kelola_showcase.index', $data);
+        return view('Pages.Halaman_admin.kelola_showcase.index', $data);
     }
 
     /**
@@ -30,7 +30,7 @@ class ShowcaseController extends Controller
      */
     public function create()
     {
-        return view('Pages.Halaman_Admin.kelola_showcase.create');
+        return view('Pages.Halaman_admin.kelola_showcase.create');
     }
 
     /**
@@ -95,7 +95,7 @@ class ShowcaseController extends Controller
     {
         $data['dataById'] = DB::table('tb_showcase')->where('id_showcase', '=', $id)->first();
 
-        return view('Pages.Halaman_Admin.kelola_showcase.edit', $data);
+        return view('Pages.Halaman_admin.kelola_showcase.edit', $data);
     }
 
     /**
