@@ -24,7 +24,7 @@ class HeroController extends Controller
         $data['hero'] = DB::table('tb_hero')->get();
 
         // dd($data['hero']);
-        return view('pages.halaman_admin.kelola_hero.index', $data);
+        return view('Pages.Halaman_Admin.kelola_hero.index', $data);
     }
 
     /**
@@ -32,7 +32,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        return view('pages.halaman_admin.kelola_hero.create');
+        return view('Pages.Halaman_Admin.kelola_hero.create');
     }
 
     /**
@@ -59,10 +59,7 @@ class HeroController extends Controller
 
 
         if ($request->hasFile('gambar_hero')) {
-            $path = 'images/gambar_hero/';
-            $request->file('gambar_hero')->move($path, $request->file('gambar_hero')->getClientOriginalName());
-
-            $gambar_hero = $path . $request->file('gambar_hero')->getClientOriginalName();
+            $gambar_hero = $request->file('gambar_hero')->store('gambar_hero','public');
         } else {
 
             return back()->with('error', 'Gambar harus diisi');
@@ -100,7 +97,7 @@ class HeroController extends Controller
     {
         $data['dataById'] = DB::table('tb_hero')->where('id_hero', '=', $id)->first();
 
-        return view('pages.halaman_admin.kelola_hero.edit', $data);
+        return view('Pages.Halaman_Admin.kelola_hero.edit', $data);
     }
 
     /**
@@ -128,10 +125,7 @@ class HeroController extends Controller
         $dataById = DB::table('tb_hero')->where('id_hero', '=', $id)->first();
 
         if ($request->hasFile('gambar_hero')) {
-            $path = 'images/gambar_hero/';
-            $request->file('gambar_hero')->move($path, $request->file('gambar_hero')->getClientOriginalName());
-
-            $gambar_hero = $path . $request->file('gambar_hero')->getClientOriginalName();
+            $gambar_hero = $request->file('gambar_hero')->store('gambar_hero','public');
         } else {
             $gambar_hero = $dataById->gambar_hero;
         }

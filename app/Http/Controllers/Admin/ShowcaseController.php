@@ -22,7 +22,7 @@ class ShowcaseController extends Controller
         $data['showcase'] = DB::table('tb_showcase')->get();
 
         // dd($data['showcase']);
-        return view('pages.halaman_admin.kelola_showcase.index', $data);
+        return view('Pages.Halaman_Admin.kelola_showcase.index', $data);
     }
 
     /**
@@ -30,7 +30,7 @@ class ShowcaseController extends Controller
      */
     public function create()
     {
-        return view('pages.halaman_admin.kelola_showcase.create');
+        return view('Pages.Halaman_Admin.kelola_showcase.create');
     }
 
     /**
@@ -58,10 +58,7 @@ class ShowcaseController extends Controller
 
 
         if ($request->hasFile('gambar_showcase')) {
-            $path = 'images/gambar_showcase/';
-            $request->file('gambar_showcase')->move($path, $request->file('gambar_showcase')->getClientOriginalName());
-
-            $gambar_showcase = $path . $request->file('gambar_showcase')->getClientOriginalName();
+            $gambar_showcase = $request->file('gambar_showcase')->store('gambar_showcase','public');
         } else {
 
             return back()->with('error', 'Gambar harus diisi');
@@ -98,7 +95,7 @@ class ShowcaseController extends Controller
     {
         $data['dataById'] = DB::table('tb_showcase')->where('id_showcase', '=', $id)->first();
 
-        return view('pages.halaman_admin.kelola_showcase.edit', $data);
+        return view('Pages.Halaman_Admin.kelola_showcase.edit', $data);
     }
 
     /**
@@ -127,10 +124,7 @@ class ShowcaseController extends Controller
         $dataById = DB::table('tb_showcase')->where('id_showcase', '=', $id)->first();
 
         if ($request->hasFile('gambar_showcase')) {
-            $path = 'images/gambar_showcase/';
-            $request->file('gambar_showcase')->move($path, $request->file('gambar_showcase')->getClientOriginalName());
-
-            $gambar_showcase = $path . $request->file('gambar_showcase')->getClientOriginalName();
+            $gambar_showcase = $request->file('gambar_showcase')->store('gambar_showcase','public');
         } else {
             $gambar_showcase = $dataById->gambar_showcase;
         }

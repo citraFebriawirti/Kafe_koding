@@ -23,7 +23,7 @@ class KelaskafekodingController extends Controller
         $data['kelaskafekoding'] = DB::table('tb_kelaskafekoding')->get();
 
         // dd($data['kelaskafekoding']);
-        return view('pages.halaman_admin.kelola_kelaskafekoding.index', $data);
+        return view('Pages.Halaman_Admin.kelola_kelaskafekoding.index', $data);
     }
 
     /**
@@ -31,7 +31,7 @@ class KelaskafekodingController extends Controller
      */
     public function create()
     {
-        return view('pages.halaman_admin.kelola_kelaskafekoding.create');
+        return view('Pages.Halaman_Admin.kelola_kelaskafekoding.create');
     }
 
     /**
@@ -62,10 +62,7 @@ class KelaskafekodingController extends Controller
 
 
         if ($request->hasFile('gambar_kelaskafekoding')) {
-            $path = 'images/gambar_kelaskafekoding/';
-            $request->file('gambar_kelaskafekoding')->move($path, $request->file('gambar_kelaskafekoding')->getClientOriginalName());
-
-            $gambar_kelaskafekoding = $path . $request->file('gambar_kelaskafekoding')->getClientOriginalName();
+            $gambar_kelaskafekoding = $request->file('gambar_kelaskafekoding')->store('gambar_kelaskafekoding','public');
         } else {
 
             return back()->with('error', 'Gambar harus diisi');
@@ -104,7 +101,7 @@ class KelaskafekodingController extends Controller
     {
         $data['dataById'] = DB::table('tb_kelaskafekoding')->where('id_kelaskafekoding', '=', $id)->first();
 
-        return view('pages.halaman_admin.kelola_kelaskafekoding.edit', $data);
+        return view('Pages.Halaman_Admin.kelola_kelaskafekoding.edit', $data);
     }
 
     /**
@@ -135,10 +132,7 @@ class KelaskafekodingController extends Controller
         $dataById = DB::table('tb_kelaskafekoding')->where('id_kelaskafekoding', '=', $id)->first();
 
         if ($request->hasFile('gambar_kelaskafekoding')) {
-            $path = 'images/gambar_kelaskafekoding/';
-            $request->file('gambar_kelaskafekoding')->move($path, $request->file('gambar_kelaskafekoding')->getClientOriginalName());
-
-            $gambar_kelaskafekoding = $path . $request->file('gambar_kelaskafekoding')->getClientOriginalName();
+            $gambar_kelaskafekoding = $request->file('gambar_kelaskafekoding')->store('gambar_kelaskafekoding','public');
         } else {
             $gambar_kelaskafekoding = $dataById->gambar_kelaskafekoding;
         }

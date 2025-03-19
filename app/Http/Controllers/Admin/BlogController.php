@@ -22,7 +22,7 @@ class BlogController extends Controller
         $data['blog'] = DB::table('tb_blog')->get();
 
         // dd($data['blog']);
-        return view('pages.halaman_admin.kelola_blog.index', $data);
+        return view('Pages.Halaman_Admin.kelola_blog.index', $data);
     }
 
     /**
@@ -30,7 +30,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('pages.halaman_admin.kelola_blog.create');
+        return view('Pages.Halaman_Admin.kelola_blog.create');
     }
 
     /**
@@ -61,10 +61,8 @@ class BlogController extends Controller
 
 
         if ($request->hasFile('gambar_blog')) {
-            $path = 'images/gambar_blog/';
-            $request->file('gambar_blog')->move($path, $request->file('gambar_blog')->getClientOriginalName());
 
-            $gambar_blog = $path . $request->file('gambar_blog')->getClientOriginalName();
+            $gambar_blog = $request->file('gambar_blog')->store('gambar_blog','public');
         } else {
 
             return back()->with('error', 'Gambar harus diisi');
@@ -102,7 +100,7 @@ class BlogController extends Controller
     {
         $data['dataById'] = DB::table('tb_blog')->where('id_blog', '=', $id)->first();
 
-        return view('pages.halaman_admin.kelola_blog.edit', $data);
+        return view('Pages.Halaman_Admin.kelola_blog.edit', $data);
     }
 
     /**
@@ -133,10 +131,7 @@ class BlogController extends Controller
         $dataById = DB::table('tb_blog')->where('id_blog', '=', $id)->first();
 
         if ($request->hasFile('gambar_blog')) {
-            $path = 'images/gambar_blog/';
-            $request->file('gambar_blog')->move($path, $request->file('gambar_blog')->getClientOriginalName());
-
-            $gambar_blog = $path . $request->file('gambar_blog')->getClientOriginalName();
+            $gambar_blog = $request->file('gambar_blog')->store('gambar_blog','public');
         } else {
             $gambar_blog = $dataById->gambar_blog;
         }

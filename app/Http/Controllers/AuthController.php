@@ -51,7 +51,7 @@ class AuthController extends Controller
     public function login()
     {
 
-        return view('pages.halaman_admin.auth.login');
+        return view('Pages.Halaman_Admin.auth.login');
     }
     public function loginProcces(Request $request)
     {
