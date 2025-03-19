@@ -823,7 +823,7 @@
     </section>
     <!-- End ajakan Daftar -->
     <!-- Pertanyaan -->
-    <section class="lg:bg-[url('./Assets/Image/bg-question.svg')] bg-no-repeat ">
+    <section class="lg:bg-[url('./Assets_LandingPage/Assets/Image/bg-question.svg')] bg-no-repeat ">
       <div class="container mt-10">
         <h1
           class="text-center text-[20px] font-semibold text-main pt-10 lg:pt-0 "
@@ -879,7 +879,7 @@
       <hr>
       <div class="container px-6 pt-6">
         <div class="mb-6 flex justify-center">
-          <img class="" src="./Assets/Image/LogoKafeKoding.png" alt="">
+          <img class="" src="{{ asset('Assets_LandingPage/Assets/Image/LogoKafeKoding.png') }}" alt="">
         </div>
         <div>
           <p class="text-center text-main font-semibold text-[20px] mb-10">Kafe Koding</p>
@@ -887,15 +887,15 @@
     
         <div class="mb-6 flex justify-center">
         <div class="flex mr-3">
-          <img src="./Assets/Image/icon_email.svg" class="w-6" alt="">
+          <img src="{{ asset('Assets_LandingPage/Assets/Image/icon_email.svg') }}" class="w-6" alt="">
           <p class="text-slate-900 font-light hidden ml-2 lg:block ">kafekodingstmikip@gmail.com</p>
         </div>
         <div class="flex mr-3">
-          <img src="./Assets/Image/icon_instagram.svg" class="w-6" alt="">
+          <img src="{{ asset('Assets_LandingPage/Assets/Image/icon_instagram.svg') }}" class="w-6" alt="">
           <p class="text-slate-900 font-light hidden ml-2  lg:block">Kafe koding</p>
         </div>
         <div class="flex mr-3">
-          <img src="./Assets/Image/icon_wa.svg" class="w-5 lg:w-5" alt="">
+          <img src="{{ asset('Assets_LandingPage/Assets/Image/icon_wa.svg') }}" class="w-5 lg:w-5" alt="">
           <p class="text-slate-900 font-light hidden ml-2  lg:block">+6283189726077</p>
         </div>
         </div>
