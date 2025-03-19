@@ -6,11 +6,11 @@
     <link
       rel="icon"
       type="image/png"
-      href="{{asset('Assets_LandingPage/./Assets//Image/Logo KafeKoding.png')}}"
+      href="{{asset('Assets_LandingPage/Assets/Image/LogoKafeKoding.png')}}"
     />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{asset('Assets_LandingPage/./Assets/Style.css')}}" />
+    <link rel="stylesheet" href="{{asset('Assets_LandingPage/Assets/Style.css')}}" />
     <link
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
       rel="stylesheet"
@@ -916,7 +916,7 @@
     </footer>
    </section>
     <!-- End Footer -->
-    <script src="{{asset('Assets_LandingPage/./Assets/Main.js')}}"></script>
+    <script src="{{asset('Assets_LandingPage/Assets/Main.js')}}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
