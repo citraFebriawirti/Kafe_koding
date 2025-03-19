@@ -29,10 +29,7 @@ class AuthController extends Controller
         ])->validate();
 
         if ($request->file('gambar_users')) {
-            $file = $request->file('gambar_users');
-            $nama_file = $file->getClientOriginalName();
-            $tujuan_upload = 'images/gambar_users/';
-            $file->move($tujuan_upload, $nama_file);
+            $file = $request->file('gambar_users')->store('gambar_users', 'public');
         }
 
         $createData = User::create([
@@ -40,7 +37,7 @@ class AuthController extends Controller
             'nama_users' => $request->nama_users,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'gambar_users' => $tujuan_upload . $nama_file
+            'gambar_users' => $file
         ]);
 
         if ($createData) {
